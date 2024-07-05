@@ -1,10 +1,14 @@
-function App() {
+import { BlogForm } from "./components/blog-form";
+import { Navbar } from "./components/navbar";
 
+function App() {
   return (
     <>
-      Hello World
+      <Navbar />
+      <br />
+      <BlogForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
