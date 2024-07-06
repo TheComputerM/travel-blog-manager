@@ -22,5 +22,6 @@ class LLMService:
 
 service = LLMService()
 
-def mistral_gen(text: str):
-    return service.get_mistral(text)
+def mistral_gen(topic: str, location: str):
+    query = f"Write a detailed blog about {topic} in {location}."
+    return service.get_mistral(query)

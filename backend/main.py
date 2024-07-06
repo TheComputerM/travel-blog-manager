@@ -30,8 +30,7 @@ async def gemini(body: LLMRequest):
 
 @app.post("/mistral")
 async def mistral(body: LLMRequest):
-    return llms.mistral_gen(body.title)
-
+    return llms.mistral_gen(body.title, body.section)
 
 @app.get("/images/pexels")
 async def pexels(location: str | None = "Goa"):

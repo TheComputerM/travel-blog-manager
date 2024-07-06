@@ -5,6 +5,7 @@ import { TbCheck, TbChevronDown } from "solid-icons/tb";
 export const SelectLLM = (props: Partial<Select.RootProps>) => {
   const items = [
     { value: "gemini", label: "Gemini" },
+    { value: "gemini-alt", label: "Gemini Alt" },
     { value: "mistral", label: "Mistral" },
   ];
   return (
