@@ -9,6 +9,7 @@ import { Input } from "./ui/input";
 import { SelectLLM } from "./select-llm";
 import { TbPlus, TbRefresh } from "solid-icons/tb";
 import { IconButton } from "./ui/icon-button";
+import { BlogImages } from "./blog-images";
 
 export const BlogForm = () => {
   const [input, setInput] = createStore<{
@@ -58,7 +59,8 @@ export const BlogForm = () => {
 
   async function generateImages() {
     const response = await fetch(`http://localhost:8000/images/pexels?location=${encodeURIComponent(input.title)}`);
-    console.log(await response.json());
+    const data = await response.json();
+    setOutput("images", data);
   }
 
   return (
@@ -133,6 +135,8 @@ export const BlogForm = () => {
       <Divider my="6" />
       <Container>
         <Heading textStyle="2xl">{input.title}</Heading>
+        <br />
+        <BlogImages images={output.images} />
         <br />
         <For each={output.sections}>
           {(content) => (
