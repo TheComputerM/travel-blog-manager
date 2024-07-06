@@ -136,7 +136,7 @@ export const BlogForm = () => {
       <Container>
         <Heading textStyle="2xl">{input.title}</Heading>
         <br />
-        <BlogImages images={output.images} />
+        
         <br />
         <For each={output.sections}>
           {(content) => (

@@ -7,6 +7,7 @@ export const SelectLLM = (props: Partial<Select.RootProps>) => {
     { value: "gemini", label: "Gemini" },
     { value: "gemini-alt", label: "Gemini Alt" },
     { value: "mistral", label: "Mistral" },
+    { value: "falcon", label: "Falcon" },
   ];
   return (
     <Select.Root

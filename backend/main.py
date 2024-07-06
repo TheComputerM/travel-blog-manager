@@ -25,12 +25,16 @@ async def gemini(body: LLMRequest):
     return llms.gemini_gen(body.title, body.section)
 
 @app.post("/gemini-alt")
-async def gemini(body: LLMRequest):
+async def gemini_alt(body: LLMRequest):
     return llms.gemini_alt_gen(body.title, body.section)
 
 @app.post("/mistral")
 async def mistral(body: LLMRequest):
     return llms.mistral_gen(body.title, body.section)
+
+@app.post("/falcon")
+async def falcon(body: LLMRequest):
+    return llms.falcon_gen(body.title, body.section)
 
 @app.get("/images/pexels")
 async def pexels(location: str | None = "Goa"):
