@@ -39,3 +39,7 @@ async def falcon(body: LLMRequest):
 @app.get("/images/pexels")
 async def pexels(location: str | None = "Goa"):
     return images.get_pexels(location)
+
+@app.get("/images/pixabay")
+async def pixabay(location: str | None = "Goa"):
+    return images.get_pixabay(location)
